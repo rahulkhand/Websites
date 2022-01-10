@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html lang = en>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        h1  {font-family: Courier New;}
+        h2  {font-family: Sans-Serif;}
+        #txt {font-family: Arial;
+             font-size: 44pt;
+             font-weight: 100;
+             letter-spacing: 2px;
+            color: #7f2bdf;}
+    </style>
+    <link rel="icon" type="image/jpg" href="https://cdn0.iconfinder.com/data/icons/pokemon-go-vol-2/135/_Time-256.png"/>
+    <script>
+        function startTime()
+        {
+        var today=new Date();
+        var h=today.getHours();
+        var m=today.getMinutes();
+        var s=today.getSeconds();
+        var p=" AM"
+        if (h > 12)
+        {
+            h = h - 12;
+            p = " PM";
+        }
+        // add a zero in front of numbers<10
+        m=checkTime(m);
+        s=checkTime(s);
+        document.getElementById('txt').innerHTML=h+":"+m+":"+s+p;
+        t=setTimeout('startTime()',500);
+        }
+        function checkTime(i)
+        {
+        if (i<10)
+        {
+        i="0" + i;
+        }
+        return i;
+        }
+    </script>
+    <title>Boring Clock</title>
+</head>
+<body onload="startTime()" style="background-color:navajowhite; border-style:ridge; border-color:green">
+    <header>
+        <div style="margin-top:2cm; text-align:center">
+            <h1 style="color:crimson">Aloha</h1>
+            <h2 style="color:palevioletred">This is a clock... yep that's about it</h2>
+            <div id ="txt"></div>
+        </div>
+    </header>
+    <main>
+        <figure class = "pokemon">
+            <div style = "text-align:center">
+                <img src = "https://66.media.tumblr.com/5a99daecbe3cee0152dce0816bbd7839/tumblr_oqdfliDWSN1uetswio1_1280.gif"
+                alt = "Waving Pikachu" width = "40%">
+            </div>
+        </figure>
+    </main>
+    <footer><p>&nbsp;&copy; Rahul Khandelwal Industries 2022</p></footer>
+</body>
+</html>
